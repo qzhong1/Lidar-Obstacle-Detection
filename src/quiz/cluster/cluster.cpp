@@ -81,7 +81,7 @@ void clusterHelper(int i, const std::vector<std::vector<float>> points, std::vec
 	cluster.push_back(i);
 	std::vector<int> near_point = tree->search(points[i], distanceTol);
 	for (int j: near_point){
-		if (!processed[i])
+		if (!processed[j])
 			clusterHelper(j, points, cluster, processed, tree, distanceTol);
 	}
 }
